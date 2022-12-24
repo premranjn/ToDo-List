@@ -4,10 +4,11 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 
-var taskItems = [];
+var taskItems = ["Buy Vegetables", "Cook Food", "Eat Food"];
 app.get("/", function (req, res) {
   var today = new Date();
   var currentDay = today.getDay();

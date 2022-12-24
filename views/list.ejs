@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
-    <h1>
-        <%= kindOfDay %>
-    </h1>
+  <body>
+    <div class="box" id="heading">
+      <h1><%= kindOfDay %></h1>
+    </div>
 
-    <ul>
-        <%for(var i = 0; i < newTaskItems.length; i++){%>
-            <li>
-                <%=newTaskItems[i]%>
-            </li>
-            <%}%>
+    <div class="box">
+      <%for(var i=0; i < newTaskItems.length; i++){%>
+      <div class="item">
+        <input type="checkbox" />
+        <p><%=newTaskItems[i]%></p>
+      </div>
+      <%}%>
 
-    </ul>
-
-    <form action="/" method="post">
-        <input id="task" type="text" name="taskName">
-        <button type="submit">Add</button>
-    </form>
-</body>
-
+      <form class = "item" action="/" method="post">
+        <input id="task" type="text" name="taskName" placeholder="New Task" autocomplete="off"/>
+        <button type="submit">+</button>
+      </form>
+    </div>
+  </body>
 </html>
